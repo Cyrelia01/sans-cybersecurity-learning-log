@@ -23,15 +23,16 @@ This is a living repository and is updated regularly as new labs, exercises, and
 
 ## Repository Structure
 sans-cybersecurity-learning-log/
-│
+├── README.md
 ├── environment-setup/
-│ └── vmware-ubuntu-setup.md
-│
+│   └── vmware-ubuntu-setup.md
 ├── sans-academy/
-│ ├── GFACT/
-│ ├── GSEC/
-│ └── GCIH/
-│
+│   ├── GFACT/
+│   │   └── README.md
+│   ├── GSEC/
+│   │   └── README.md
+│   └── GCIH/
+│       └── README.md
 └── notes/
 
 ---
