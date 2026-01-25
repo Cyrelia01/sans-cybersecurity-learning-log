@@ -25,7 +25,9 @@ This is a living repository and is updated regularly as new labs, exercises, and
 sans-cybersecurity-learning-log/
 ├── README.md
 ├── environment-setup/
-│   └── vmware-ubuntu-setup.md
+│   ├── vmware-ubuntu-setup.md
+│   ├── linux-networking-gui.md
+│   └── linux-folder-structure.md
 ├── sans-academy/
 │   ├── GFACT/
 │   │   └── README.md
