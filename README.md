@@ -24,10 +24,13 @@ This is a living repository and is updated regularly as new labs, exercises, and
 ## Repository Structure
 sans-cybersecurity-learning-log/
 ├── README.md
-├── environment-setup/
-│   ├── vmware-ubuntu-setup.md
-│   ├── linux-networking-gui.md
-│   └── linux-folder-structure.md
+├── labs/
+│   ├── 01-environment-setup-vmware-ubuntu.md
+│   ├── 02-linux-networking-gui.md
+│   ├── 03-linux-folder-structure.md
+│   ├── 04-linux-file-permissions.md
+│   ├── 05-linux-hidden-files.md
+│   └── 06-linux-environment-variables.md
 ├── sans-academy/
 │   ├── GFACT/
 │   │   └── README.md
