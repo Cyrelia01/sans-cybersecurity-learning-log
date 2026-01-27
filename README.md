@@ -25,7 +25,7 @@ This is a living repository and is updated regularly as new labs, exercises, and
 sans-cybersecurity-learning-log/
 ├── README.md
 ├── labs/
-│   ├── 01-environment-setup-vmware-ubuntu.md
+│   ├── 01-VMWare Workstation & Ubuntu Desktop Environment Setup.md
 │   ├── 02-linux-networking-gui.md
 │   ├── 03-linux-folder-structure.md
 │   ├── 04-linux-file-permissions.md
