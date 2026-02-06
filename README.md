@@ -13,6 +13,19 @@ This is a living repository and is updated regularly as new labs, exercises, and
 
 ---
 
+## Who This Repository Is For
+
+This repository is primarily for my own reference, learning reinforcement, and progress tracking as I build and document foundational cybersecurity and Linux skills.
+
+It is also intended to be useful for:
+- **Recruiters and hiring managers** who want to see practical, hands-on evidence of my technical learning, problem-solving approach, and documentation habits
+- **Early-career learners** who are studying Linux or cybersecurity fundamentals and want real-world, step-by-step examples
+- **Anyone transitioning into IT or cybersecurity** who benefits from seeing how concepts are practiced, tested, and reflected on outside of purely theoretical coursework
+
+All content is written with clarity and transparency in mind, focusing on *what was done, why it was done, and what was learned*.
+
+---
+
 ## Certifications & Training in Progress
 - **SANS Academy**
   - GFACT (Foundational Cybersecurity Skills)
@@ -22,33 +35,35 @@ This is a living repository and is updated regularly as new labs, exercises, and
 ---
 
 ## Repository Structure
+
 sans-cybersecurity-learning-log/
 ├── README.md
 ├── labs/
-│   ├── 01-VMWare Workstation & Ubuntu Desktop Environment Setup.md
-│   ├── 02-linux-networking-gui.md
-│   ├── 03-linux-folder-structure.md
-│   ├── 04-linux-file-permissions.md
-│   ├── 05-linux-hidden-files.md
-│   └── 06-linux-environment-variables.md
-├── sans-academy/
-│   ├── GFACT/
-│   │   └── README.md
-│   ├── GSEC/
-│   │   └── README.md
-│   └── GCIH/
-│       └── README.md
+│   ├── 1. VMware Workstation & Ubuntu Desktop Environment Setup  
+│   ├── 2. Linux Network Configuration (GUI)  
+│   ├── 3. Linux Folder Structure  
+│   ├── 4. Linux File Permissions  
+│   ├── 5. Linux Hidden Files  
+│   ├── 6. Linux Environment Variables  
+│   ├── 7. Linux Tab Completion  
+│   ├── 8. Linux Previous Commands & Reverse Command Search  
+│   ├── 9. Linux Command History  
+│   ├── 10. Linux Command Parameters  
+│   ├── 11. Linux Interrupts and Job Control  
+│   ├── 12. Linux Processes  
+│   ├── 13. Linux Pipes and Redirects  
+│   ├── 14. VMware NAT & DHCP Failure Troubleshooting  
+│   └── 15. Installing Software Using Package Managers (RHEL)
 └── notes/
 
 ---
 
 ### Section Descriptions
-- **environment-setup/**  
-  Documentation of lab environment creation, virtualization, and operating system setup used to support hands-on cybersecurity exercises.
-
-- **sans-academy/**  
-  High-level summaries of labs, tools used, concepts practiced, and lessons learned during SANS Academy coursework.  
-  *(No proprietary or exam-related content is included.)*
+- - **labs/**    
+  A consolidated collection of hands-on Linux labs completed as part of SANS Academy coursework and self-directed practice.  
+  Labs cover foundational Linux concepts, process and job control, networking, virtualization, troubleshooting, and package management.  
+  Each lab is documented with clear steps, commands used, observations, and lessons learned.  
+  *(No proprietary, exam, or restricted SANS content is included.)*
 
 - **notes/**  
   Supplemental learning notes, reflections, and skill mapping related to cybersecurity concepts and career development.
