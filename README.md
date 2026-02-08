@@ -54,6 +54,7 @@ sans-cybersecurity-learning-log/
 │   ├── 13. Linux Pipes and Redirects  
 │   ├── 14. VMware NAT & DHCP Failure Troubleshooting  
 │   └── 15. Installing Software Using Package Managers (RHEL)
+|
 └── notes/
 
 ---
