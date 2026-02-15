@@ -227,7 +227,7 @@ The captured query packet shows:
 
 This confirms standard DNS behavior using UDP.
 
-![DNS Query Packet](images/dns-query.png)
+![DNS Query Packet](images/lab17-dns-query.png)
 
 ---
 
@@ -244,7 +244,7 @@ The response packet shows:
 
 The `Authoritative` flag confirms the server is the source of truth for this zone.
 
-![DNS Response Packet](images/dns-response.png)
+![DNS Response Packet](images/lab17-dns-response.png)
 
 ---
 
