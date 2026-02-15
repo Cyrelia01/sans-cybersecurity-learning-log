@@ -1,0 +1,286 @@
+# Deploying and Troubleshooting an Authoritative DNS Server with Packet-Level Validation
+
+## Objective
+
+Deploy an authoritative DNS server using BIND on Ubuntu Server, configure a custom forward lookup zone, troubleshoot resolution failures, and validate DNS behavior using both command-line tools and packet capture analysis.
+
+This lab demonstrates infrastructure configuration, structured troubleshooting, and protocol-level validation.
+
+---
+
+## Environment
+
+- Ubuntu Server 22.04 (BIND9)
+- Ubuntu Desktop 22.04 (Client)
+- VMware NAT network
+- DNS Zone: lab.test
+- DNS Server IP: 192.168.20.129
+
+---
+
+## Phase 1 – BIND Installation and Initial Configuration
+
+BIND was installed on the Ubuntu Server:
+
+```bash
+sudo apt update
+sudo apt install bind9
+```
+
+A new zone definition was added to:
+
+```
+/etc/bind/named.conf.local
+```
+
+```conf
+zone "lab.local" {
+    type master;
+    file "/etc/bind/db.lab.local";
+};
+```
+
+A corresponding zone file was created containing:
+
+- SOA record
+- NS record
+- A record for `ns.lab.local`
+- A record for `server.lab.local`
+
+Validation was performed using:
+
+```bash
+sudo named-checkconf
+sudo named-checkzone lab.local /etc/bind/db.lab.local
+```
+
+The zone loaded successfully.
+
+---
+
+## Phase 2 – Initial Resolution Failure (SERVFAIL)
+
+When testing from the Ubuntu Desktop client:
+
+```bash
+nslookup server.lab.local
+```
+
+The result returned:
+
+```
+SERVFAIL
+```
+
+### Root Cause #1 – `.local` Namespace Conflict
+
+Ubuntu systems treat `.local` as mDNS territory. This caused conflicts with standard DNS resolution.
+
+### Resolution
+
+The zone was renamed from:
+
+```
+lab.local
+```
+
+to:
+
+```
+lab.test
+```
+
+Zone definition updated in:
+
+```
+/etc/bind/named.conf.local
+```
+
+Zone file renamed and edited:
+
+```
+/etc/bind/db.lab.test
+```
+
+All references were updated accordingly, and the serial number incremented.
+
+Validation re-run:
+
+```bash
+sudo named-checkconf
+sudo named-checkzone lab.test /etc/bind/db.lab.test
+sudo systemctl reload bind9
+```
+
+---
+
+## Phase 3 – Firewall and Query Access Configuration
+
+Even after correcting the zone, resolution required additional verification.
+
+Firewall rules were reviewed and DNS was allowed:
+
+```bash
+sudo ufw allow 53/udp
+sudo ufw allow 53/tcp
+```
+
+BIND options were reviewed to ensure it was:
+
+- Listening on appropriate interfaces
+- Allowing queries from the internal network
+
+Service status verified:
+
+```bash
+sudo systemctl status bind9
+```
+
+Port listening verified:
+
+```bash
+sudo ss -lntup | grep :53
+```
+
+---
+
+## Phase 4 – Client DNS Configuration
+
+The Ubuntu Desktop VM was configured to use:
+
+```
+192.168.20.129
+```
+
+as its DNS server.
+
+Verification:
+
+```bash
+resolvectl status
+```
+
+Confirmed DNS server assignment.
+
+---
+
+## Phase 5 – Successful Resolution and Flag Interpretation
+
+Resolution test:
+
+```bash
+dig server.lab.test
+```
+
+Key output:
+
+```
+flags: qr aa rd ra
+status: NOERROR
+```
+
+### Flag Interpretation
+
+- **qr** – Response
+- **aa** – Authoritative Answer
+- **rd** – Recursion Desired (client requested recursion)
+- **ra** – Recursion Available (server supports recursion)
+
+Even though recursion was available, it was not required because the server was authoritative for the zone.
+
+---
+
+## Phase 6 – Packet-Level Validation with Wireshark
+
+Wireshark was installed on the Ubuntu Desktop client:
+
+```bash
+sudo apt install wireshark
+```
+
+Capture interface: `ens33`
+
+Display filter used:
+
+```
+udp.port == 53
+```
+
+To ensure direct network capture and bypass stub resolver behavior:
+
+```bash
+dig server.lab.test @192.168.20.129
+```
+
+---
+
+### DNS Query Packet
+
+The captured query packet shows:
+
+- Client IP → Server IP
+- UDP transport
+- Destination port 53
+- Query type: A
+- Query name: server.lab.test
+- Random ephemeral source port
+
+This confirms standard DNS behavior using UDP.
+
+![DNS Query Packet](images/dns-query.png)
+
+---
+
+### DNS Response Packet
+
+The response packet shows:
+
+- Source port 53 (server)
+- Authoritative flag set
+- Reply code: No error
+- Answer section:
+  - server.lab.test → 192.168.20.129
+- TTL value
+
+The `Authoritative` flag confirms the server is the source of truth for this zone.
+
+![DNS Response Packet](images/dns-response.png)
+
+---
+
+## Additional Observations
+
+- Ubuntu systems may issue both A (IPv4) and AAAA (IPv6) queries.
+- DNS queries use UDP by default for efficiency.
+- TCP is typically reserved for zone transfers or large responses.
+- Systemd-resolved acts as a local stub resolver (127.0.0.53) before forwarding queries.
+- SERVFAIL typically indicates internal server configuration errors rather than missing records.
+
+---
+
+## Key Concepts Reinforced
+
+- Difference between authoritative and recursive DNS servers
+- Importance of zone file accuracy and serial numbers
+- Namespace considerations (.local vs .test)
+- Firewall impact on service accessibility
+- DNS flag interpretation (AA, RD, RA)
+- Packet-level verification of application-layer protocols
+
+---
+
+## Conclusion
+
+This lab demonstrated the complete lifecycle of DNS deployment:
+
+1. Service installation
+2. Zone creation
+3. Troubleshooting resolution failures
+4. Firewall and configuration adjustments
+5. Client configuration
+6. Command-line validation
+7. Packet-level traffic inspection
+
+The exercise strengthened understanding of DNS architecture, protocol behavior, and structured troubleshooting methodology.
+
+This foundation supports future labs involving web servers, mail servers, logging infrastructure, and security monitoring.
