@@ -63,7 +63,7 @@ Correct:
 print(f"Hello {name}, pleasure to meet you.")
 ```
 
-The script was also tested with the "f" prefix. This executed successfully, but printed incorrectly with:
+The script was also tested without the "f" prefix. This executed successfully, but printed incorrectly with:
 Hello {name}, pleasure to meet you.
 
 Without the f, Python treats the string as a literal. The {name} placeholder is not evaluated unless the string is explicitly defined as a formatted string (f-string).
