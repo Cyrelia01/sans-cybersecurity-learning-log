@@ -12,23 +12,25 @@ This lab reinforces foundational knowledge of variable assignment, data types, a
 - Python interpreter
 - Source file: output.py
 
----
-
 ## Creating Variables
 
 In the code editor, four variables were created to represent different data types:
 
+```Python
 my_string = "I can write whatever I like here"
 my_int = 1337
 my_float = 42.1234
 my_bool = False
+```
 
 Underneath the variable declarations, each variable was printed using:
 
+``` Python
 print(my_string)
 print(my_int)
 print(my_float)
 print(my_bool)
+```
 
 The program was executed in the terminal using python output.py.
 
@@ -41,33 +43,35 @@ False
 
 This confirmed that Python correctly stored and printed values for string, integer, float, and boolean types.
 
----
-
 ## Inspecting Data Types
 
 To better understand how Python classifies each variable internally, the code was modified to print the type of each variable using the built-in type() function:
 
+```Python
 print(type(my_string))
 print(type(my_int))
 print(type(my_float))
 print(type(my_bool))
+```
 
 Running python output.py produced:
 
+```Python
 <class 'str'>
 <class 'int'>
 <class 'float'>
 <class 'bool'>
+```
 
 This demonstrated how Python explicitly identifies each variable’s underlying data type.
-
----
 
 ## Experimenting with Multiple Statements on One Line
 
 To experiment further, an attempt was made to print both the value and the type on a single line using the && operator:
 
+```Python
 print(my_string) && print(type(my_string))
+```
 
 This resulted in a syntax error:
 
@@ -77,6 +81,7 @@ The && operator is valid in shell environments (such as Bash) for conditional co
 
 To correct this, the code was rewritten using separate print() statements:
 
+```Python
 print(my_string)
 print(type(my_string))
 print(my_int)
@@ -85,10 +90,9 @@ print(my_float)
 print(type(my_float))
 print(my_bool)
 print(type(my_bool))
+```
 
 The output confirmed both values and types were printed correctly.
-
----
 
 ## Key Concepts Reinforced
 - Variables in Python do not require explicit type declarations.
@@ -98,16 +102,13 @@ The output confirmed both values and types were printed correctly.
 - Syntax from other environments (such as && from Bash) does not automatically apply to Python.
 - Experimentation and error messages are essential parts of the learning process.
 
----
-
 ## Conclusion
 
 This lab reinforced foundational Python concepts related to variable assignment and data types. While basic, the exercise provided practical reinforcement of:
 - Data storage behavior
 - Type inspection
 - Syntax rules
-- 
-Interpreter feedback through error messages
+- Interpreter feedback through error messages
 
 The experimentation with && highlighted the importance of understanding language-specific syntax and not assuming behavior carries over from other environments.
 
