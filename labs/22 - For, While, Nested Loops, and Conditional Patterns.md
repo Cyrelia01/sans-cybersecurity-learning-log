@@ -18,7 +18,7 @@ The initial goal was to build a string pattern using a for loop.
 
 In the editor:
 
-```
+```Python
 output = ""
 
 for y in range(1, 10):
@@ -28,7 +28,9 @@ print(output)
 ```
 
 Output
+```Python
 *********
+```
 
 Observation:
 - range(1, 10) generates numbers 1 through 9. The final called number in a sequence is not printed.
@@ -40,7 +42,7 @@ Part 2 – Nested For Loops (Building a Box)
 
 The next step introduced nested loops and newline characters.
 
-```
+```Python
 output = ""
 
 for y in range(1, 10):
@@ -52,7 +54,7 @@ print(output)
 ```
 
 Output
-```
+```Python
 *****************************
 *****************************
 *****************************
@@ -75,7 +77,7 @@ Part 3 – Alternating Pattern Using Modulus
 
 The pattern was modified using conditional logic:
 
-```
+```Python
 output = ""
 
 for y in range(1, 10):
@@ -91,7 +93,7 @@ print(output)
 ```
 
 Output
-```
+```Python
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-
@@ -114,7 +116,7 @@ Part 4 – Creating a Checkerboard Pattern
 
 To vary rows, y was included in the formula:
 
-```
+```Python
 output = ""
 
 for y in range(1, 10):
@@ -130,7 +132,7 @@ print(output)
 ```
 
 Output
-```
+```Python
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
@@ -149,7 +151,7 @@ Part 5 – While Loop with List
 
 A list of cities was created:
 
-```
+```Python
 cities = ['New York', 'London', 'Paris']
 
 while cities:
@@ -158,7 +160,7 @@ while cities:
 ```
 
 Output
-```
+```Python
 New York
 London
 Paris
@@ -178,7 +180,7 @@ Part 6 – Converting List to Dictionary Objects
 
 The list was changed to structured dictionaries:
 
-```
+```Python
 cities = [
   {'name': 'New York', 'todo': 'Night-life'}, 
   {'name': 'London', 'todo': 'Culture'},
@@ -191,7 +193,7 @@ while cities:
 ```
 
 Output
-```
+```Python
 {'name': 'New York', 'todo': 'Night-life'}
 {'name': 'London', 'todo': 'Culture'}
 {'name': 'Paris', 'todo': 'Food'}
@@ -205,7 +207,7 @@ Part 7 – Formatting Dictionary Output
 
 To display the data more cleanly:
 
-```
+```Python
 cities = [
   {'name': 'New York', 'todo': 'Night-life'}, 
   {'name': 'London', 'todo': 'Culture'},
@@ -218,7 +220,7 @@ while cities:
 ```
 
 Output
-```
+```Python
 City: New York, To-do: Night-life
 City: London, To-do: Culture
 City: Paris, To-do: Food
