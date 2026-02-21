@@ -146,7 +146,7 @@ This demonstrates execution flow:
 - try/except handles runtime conversion errors
 - Python slicing uses half-open ranges [start:end]
 
-Conclusion
+## Conclusion
 
 This lab transitioned from interactive user input to structured command line argument processing.
 
