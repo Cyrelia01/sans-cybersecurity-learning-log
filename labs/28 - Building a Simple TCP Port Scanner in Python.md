@@ -159,7 +159,7 @@ Port 80 is the standard port for HTTP (web traffic), which aligns with earlier l
 
 This scanning approach is a basic TCP connect scan and is meant for learning.
 
-** Scanning systems you do not own or have explicit permission to test can violate policies and laws.**
+**Scanning systems you do not own or have explicit permission to test can violate policies and laws.**
 
 Internal IPs and VM details are masked above. (***** - sensitive)
 
