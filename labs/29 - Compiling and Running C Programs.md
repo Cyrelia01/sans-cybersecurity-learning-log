@@ -1,4 +1,4 @@
-Compiling and Running C Programs
+# Compiling and Running C Programs
 
 ## Objective
 
