@@ -26,13 +26,13 @@ print("Hello, World!")
 ```
 
 Switched to the terminal and executed:
-python output.py
+`python output.py`
 
 The program ran successfully and displayed:
-Hello, World!
+`Hello, World!`
 
 For comparison, the script was also executed using:
-python3 output.py
+`python3 output.py`
 
 This also ran successfully, confirming that both python and python3 were available in the lab environment.
 
@@ -46,11 +46,11 @@ print(f "Hello {name}, pleasure to meet you.")
 
 After saving and executing the command, the following was returned:
 
-File "/home/.../output.py", line 2
+`File "/home/.../output.py", line 2
     print(f "Hello {name}, pleasure to meet you.")
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SyntaxError: invalid syntax
-
+`
 The error indicated an issue on line 2. The problem was a subtle syntax rule in Python: there must be no space between the f and the opening quotation mark in a formatted string.
 
 Incorrect:
@@ -64,7 +64,7 @@ print(f"Hello {name}, pleasure to meet you.")
 ```
 
 The script was also tested without the "f" prefix. This executed successfully, but printed incorrectly with:
-Hello {name}, pleasure to meet you.
+`Hello {name}, pleasure to meet you.`
 
 Without the f, Python treats the string as a literal. The {name} placeholder is not evaluated unless the string is explicitly defined as a formatted string (f-string).
 
