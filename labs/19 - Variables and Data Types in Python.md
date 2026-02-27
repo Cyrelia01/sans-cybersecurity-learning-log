@@ -1,4 +1,4 @@
-## Variables and Data Types in Python
+# Variables and Data Types in Python
 
 ## Objective
 
