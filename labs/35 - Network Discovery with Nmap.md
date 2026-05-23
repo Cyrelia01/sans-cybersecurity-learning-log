@@ -55,6 +55,7 @@ The lab containers were started with:
 ```
 
 After running the command, I confirmed that 7 containers were running.
+
 ![Seven running lab containers](images/lab35-running-containers.png)
 
 For the rest of the lab, commands were run from inside the student container:
@@ -75,6 +76,7 @@ The -sn option performs host discovery only. It identifies which hosts are up wi
 Result:
 
 Nmap identified 7 hosts up on the target network.
+
 ![Nmap host discovery showing seven hosts up](images/lab35-nmap-host-discovery.png)
 
 #### Analysis
