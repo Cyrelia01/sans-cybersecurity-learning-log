@@ -71,7 +71,7 @@ Command used:
 ```bash
 nmap -sn 172.28.14.0/24
 ```
-The -sn option performs host discovery only. It identifies which hosts are up without scanning their ports.
+The ```-sn``` option performs host discovery only. It identifies which hosts are up without scanning their ports.
 
 Result:
 
@@ -97,7 +97,7 @@ nmap -v --top-ports 100 -oG -
 Command breakdown:
 1. ```-v``` enables verbose output
 2. ```--top-ports 100``` lists the top 100 most common TCP ports
-3. ```-oG -``` outputs in grepable format to standard output
+3. ```-oG``` outputs in grepable format to standard output
 4. ```-``` indicates there is no target system being scanned
 
 Result:
