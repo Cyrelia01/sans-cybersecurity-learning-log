@@ -55,7 +55,7 @@ The lab containers were started with:
 ```
 
 After running the command, I confirmed that 7 containers were running.
-![Seven running lab containers](../images/lab35-running-containers.png)
+![Seven running lab containers](images/lab35-running-containers.png)
 
 For the rest of the lab, commands were run from inside the student container:
 ```bash
@@ -75,7 +75,7 @@ The -sn option performs host discovery only. It identifies which hosts are up wi
 Result:
 
 Nmap identified 7 hosts up on the target network.
-![Nmap host discovery showing seven hosts up](../images/lab35-nmap-host-discovery.png)
+![Nmap host discovery showing seven hosts up](images/lab35-nmap-host-discovery.png)
 
 #### Analysis
 
@@ -101,7 +101,7 @@ Command breakdown:
 Result:
 
 Nmap displayed the top 100 TCP ports it commonly scans.
-![Nmap top 100 TCP ports](../images/lab35-nmap-top-100.png)
+![Nmap top 100 TCP ports](images/lab35-nmap-top-100.png)
 
 #### Analysis
 
@@ -125,10 +125,11 @@ By default, Nmap scans the 1,000 most common TCP ports.
 Result:
 
 Nmap returned scan results for discovered hosts. Some hosts had open ports, including ports 80 and 443.
-![Partial Nmap port scan results](../images/lab35-basic-port-scan-partial.png)
+
+![Partial Nmap port scan results](images/lab35-basic-port-scan-partial.png)
 
 
-![Nmap scan showing open ports 80 and 443](../images/lab35-open-ports.png)
+![Nmap scan showing open ports 80 and 443](images/lab35-open-ports.png)
 
 #### Analysis
 
@@ -154,7 +155,7 @@ The ```-sV``` flag tells Nmap to attempt service version detection. This scan ta
 ### Finding a Service on a Non-Standard Port
 
 After comparing the basic port scan with the service scan, I found that SSH was running on port 80. Port 80 is normally associated with HTTP web traffic, but the service scan showed SSH instead.
-![Nmap service scan showing SSH on port 80](../images/lab35-ssh-port-80.png)
+![Nmap service scan showing SSH on port 80](images/lab35-ssh-port-80.png)
 
 #### Analysis
 
@@ -226,7 +227,7 @@ nmap -O --osscan-guess 172.28.14.0/24
 Result:
 
 Nmap made an aggressive guess that the host was Linux.
-![Nmap aggressive OS scan guessing Linux](../images/lab35-os-guess.png)
+![Nmap aggressive OS scan guessing Linux](images/lab35-os-guess.png)
 
 #### Analysis
 
